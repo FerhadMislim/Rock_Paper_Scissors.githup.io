@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../static/css/main.css" th:href="@{css/main.css}">
+    <title>Output Page</title>
+</head>
+<body>
+    <h1>The result of the game</h1>
+
+    <h2>Your choice was <span th:text="${user}">rock</span></h2>
+    <h2>The choice of the computer was <span th:text="${computer}">rock</span></h2>
+    <h2>The winner is </h2>
+    <h1 class="winner" th:if="${user.winner && !computer.winner}">YOU</h1>
+    <h1 class="winner" th:if="${computer.winner && !user.winner}">COMPUTER</h1>
+    <h1 class="winner" th:if="${(user.winner == false && computer.winner == false)}">NO WINNER</h1>
+    <a href="Input.html" th:href="@{Input}">Play Again</a>
+    <br><br><br><br>
+    <footer>Sheridan College/ Ferhad Mislim</footer>
+
+</body>
+</html>

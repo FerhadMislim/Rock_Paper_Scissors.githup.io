@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../static/css/main.css" th:href="@{css/main.css}">
+    <title>Rock Paper Scissors</title>
+</head>
+<body>
+  <h1>Select one option</h1>
+  <br><br>
+  <form action="Output.html" th:method="post" th:action="@{Process}" th:object="${user}">
+
+    <div>
+      <img src="../static/paper.png" th:src="paper.png" alt="paper image">
+      <label for="paper">Paper</label>
+      <input type="radio" id="paper" name="game" th:field="*{choice}" th:value="0" checked>
+    </div>
+
+    <div>
+      <img src="../static/rock.png" th:src="rock.png" alt="paper image">
+      <label for="rock">Rock</label>
+      <input type="radio" id="rock" name="game" th:field="*{choice}" th:value="1">
+    </div>
+
+    <div>
+      <img src="../static/scissors.png" th:src="scissors.png" alt="paper image">
+      <label for="scissors">Scissors</label>
+      <input type="radio" id="scissors" name="game" th:field="*{choice}" th:value="2">
+    </div>
+    <br><br><br>
+    <hr>
+    <input class="btn" type="submit" value="Play">
+  </form>
+  <br><br>
+  <footer>Ferhad Mislim</footer>
+
+</body>
+</html>
